@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "progress": "^2.0.3"
+    "node": "^17.4.0",
+    "progress": "^2.0.3",
+    "timers-promises": "^1.0.1"
   },
   "devDependencies": {
     "axios": "^0.25.0",

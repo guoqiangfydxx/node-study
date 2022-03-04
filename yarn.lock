@@ -112,6 +112,18 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+node-bin-setup@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/node-bin-setup/-/node-bin-setup-1.1.0.tgz#9df94c41335a8f41958a639b2736f860582a209c"
+  integrity sha512-pTeU6NgUrexiLNtd+AKwvg6cngHMvj5FZ5e2bbv2ogBSIc9yhkXSSaTScfSRZnwHIh5YFmYSYlemLWkiKD7rog==
+
+node@^17.4.0:
+  version "17.4.0"
+  resolved "https://registry.npmmirror.com/node/-/node-17.4.0.tgz#946f480c8bc08720cfdb3f6681b8f8c913a6c8e0"
+  integrity sha512-/kPlbyQjDJa9NEOPmKSTmHOxgq+7wAMWNdU+8B9cXseQXTaF3xYAiYc9dCh3fDUxnrLR/DIqiYEQ85ICqSya8A==
+  dependencies:
+    node-bin-setup "^1.0.0"
+
 p-limit@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-2.3.0.tgz#3dd33c647a214fdfffd835933eb086da0dc21db1"
@@ -191,6 +203,11 @@ strip-final-newline@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
   integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
+
+timers-promises@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/timers-promises/-/timers-promises-1.0.1.tgz#d4883030f8e0c90fb28ac1fc39863e24eaef2da0"
+  integrity sha512-u87PAM7pIloXOxGcjqfDRQB72NG8DIVKafVafHgixzlsPlLnZTw9IkiX/WYSAqK1SkRAc6J2I/SUrBiswGvNiA==
 
 which-module@^2.0.0:
   version "2.0.0"

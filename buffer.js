@@ -28,7 +28,7 @@ const { Buffer, Blob } = require('buffer');
 //   console.log(b1)
 // }
 
-const { setTimeout: delay } = require('timers/promises');
+const { setTimeout: delay } = require('timers-promises');
 
 const blob = new Blob(['hello there']);
 

@@ -1,6 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add r);
-  const { setTimeout: delay } = require(timers/promises
+  /usr/local/bin/node /usr/local/bin/yarn add timers-promises
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
@@ -15,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: http://xnpm.ximalaya.com/r);%0Aconst%20%7B%20setTimeout:%20delay%20%7D%20=%20require(timers%2fpromises: Request "http://xnpm.ximalaya.com/r);%0Aconst%20%7B%20setTimeout:%20delay%20%7D%20=%20require(timers%2fpromises" returned a 403
+  Error: http://xnpm.ximalaya.com/timers-promises: Request "http://xnpm.ximalaya.com/timers-promises" returned a 403
       at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66997:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140662:22)
       at Request.emit (events.js:375:28)
