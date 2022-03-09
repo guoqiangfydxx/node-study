@@ -1,0 +1,8 @@
+Error: dd
+    at Object.<anonymous> (/Users/xmly/Documents/github/node-study/console.js:18:14)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)
+    at internal/main/run_main_module.js:17:47
