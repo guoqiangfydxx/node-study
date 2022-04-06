@@ -70,47 +70,64 @@
 // });
 
 const http = require('http');
-http.get('http://localhost:8000/', (res) => {
-  const { statusCode } = res;
-  const contentType = res.headers['content-type'];
+// http.get('http://localhost:8000/', (res) => {
+//   const { statusCode } = res;
+//   const contentType = res.headers['content-type'];
 
-  let error;
-  // 任何 2xx 状态码都表示成功响应，但这里只检查 200。
-  if (statusCode !== 200) {
-    error = new Error('Request Failed.\n' +
-                      `Status Code: ${statusCode}`);
-  } else if (!/^application\/json/.test(contentType)) {
-    error = new Error('Invalid content-type.\n' +
-                      `Expected application/json but received ${contentType}`);
-  }
-  if (error) {
-    console.error(error.message);
-    // 消费响应数据以释放内存
-    res.resume();
-    return;
-  }
+//   let error;
+//   // 任何 2xx 状态码都表示成功响应，但这里只检查 200。
+//   if (statusCode !== 200) {
+//     error = new Error('Request Failed.\n' +
+//                       `Status Code: ${statusCode}`);
+//   } else if (!/^application\/json/.test(contentType)) {
+//     error = new Error('Invalid content-type.\n' +
+//                       `Expected application/json but received ${contentType}`);
+//   }
+//   if (error) {
+//     console.error(error.message);
+//     // 消费响应数据以释放内存
+//     res.resume();
+//     return;
+//   }
 
-  res.setEncoding('utf8');
-  let rawData = '';
-  res.on('data', (chunk) => { rawData += chunk; });
-  res.on('end', () => {
-    try {
-      const parsedData = JSON.parse(rawData);
-      console.log(parsedData);
-    } catch (e) {
-      console.error(e.message);
-    }
-  });
-}).on('error', (e) => {
-  console.error(`Got error: ${e.message}`);
-});
+//   res.setEncoding('utf8');
+//   let rawData = '';
+//   res.on('data', (chunk) => { rawData += chunk; });
+//   res.on('end', () => {
+//     try {
+//       const parsedData = JSON.parse(rawData);
+//       console.log(parsedData);
+//     } catch (e) {
+//       console.error(e.message);
+//     }
+//   });
+// }).on('error', (e) => {
+//   console.error(`Got error: ${e.message}`);
+// });
 
 // 创建本地服务器来从其接收数据
-const server = http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.end(JSON.stringify({
-    data: 'Hello World!'
-  }));
-});
+const server = http.createServer();
+
+server.on('request', (req, response) => {
+  // console.log('res', req)
+  if (req.url === '/favicon.ico') {
+    return;
+  }
+  if (req.url === '/') {
+    response.setHeader('Content-type', 'text/html; charset=utf-8')
+    response.end(`<html>
+      <body>
+        <div style='color: red'>的就的角度讲</div>
+      </body>
+    </html>`)
+  } else {
+    response.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    response.end('技术大姐夫就会将度假酒店')
+  }
+  console.log('请求', req)
+  // console.log('response', response)
+  const host = req.headers.host;
+  console.log(`完整的链接：${host}${req.url}`)
+})
 
 server.listen(8000);
