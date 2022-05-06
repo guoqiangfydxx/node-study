@@ -1,7 +1,8 @@
-const { unlink, access, writeFile } = require('fs/promises');
+const { unlink, access, writeFile, readdir } = require('fs/promises');
 const { constants } = require('fs');
 const fsPromise = require('fs/promises');
 const Buffer = require('buffer');
+// const fs = require('fs')
 
 // (async function(path) {
 //   try {
@@ -30,3 +31,20 @@ const Buffer = require('buffer');
 // fsPromise.rm('./temp2.txt')
 
 // fsPromise.truncate('./temp.txt', 10)
+
+// fs.readdir('.', (err, dirs) => {
+//   if (!err) {
+//     console.log('dirs', dirs)
+//   }
+// })
+(async () => {
+  try {
+      const files = await readdir(__dirname);
+      for (const file of files)
+        console.log(file);
+    } catch (err) {
+      console.error(err);
+    }
+})()
+
+console.log(__dirname)
