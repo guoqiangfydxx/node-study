@@ -1,0 +1,21 @@
+extends layout 
+block content
+  form(action='/signup', method='post')
+    fieldset 
+      legend sign up
+      p 
+        label first
+        input(name='first', type='text')
+      p
+        label last
+        input(name='last', type='text')
+      p
+        label email
+        input(name='email', type='text')
+      p
+        label password
+        input(name='password', type='password')
+      p
+        button submit
+      p
+        a(href='/') go back
