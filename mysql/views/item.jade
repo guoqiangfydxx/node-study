@@ -1,0 +1,29 @@
+extends layout 
+block content 
+  a(href='/') go back 
+  h2=item.title 
+  p=item.desciption 
+  h3 user review 
+  if (reviews.length)
+    each review in reviews 
+      .review 
+        b #{review.stars} stars 
+        p=review.text
+  else 
+    p no review to show write one 
+  form(action='/item/#{item.id}/review', method='post')
+    fieldset
+      legend create review 
+      p 
+        label stars 
+        select(name='stars')
+          option 1
+          option 2
+          option 3
+          option 4
+          option 5
+      p 
+        label review 
+        textarea(name='text')
+      p 
+        button(type='submit') send
