@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>授权应用</title>
+</head>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<style>
+.oauth-box {
+  width: 400px;
+  border: 1px solid #AAA;
+  background-color: #EEE;
+  padding: 8px 20px;
+  margin: auto;
+}
+.text-muted {
+  color: #888;
+  font-size: 81.5%;
+}
+.btn-primary {
+  background-color: #0051FF;
+  border: 1px solid #AAA;
+  font-size: 100%;
+  color: #FFF;
+  padding: 4px 20px;
+  cursor: pointer;
+}
+</style>
+<body>
+  <div class="oauth-box">
+    <button id="btn">click me</button>
+  </div>
+</body>
+<script>
+  const btn = document.getElementById('btn')
+  btn.addEventListener('click', () => {
+    const url = new URLSearchParams(location.search)
+    const params = {}
+    for (const [key, val] of url.entries()) {
+      params[key] = val;
+    }
+    axios.post('/example/auth', params, {
+      withCredentials: true
+    }).then(res => {
+      console.log('res', res)
+    }).catch(err => {
+      console.error(err)
+    })
+  })
+</script>
+</html>
